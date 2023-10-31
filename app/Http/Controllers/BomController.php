@@ -70,6 +70,13 @@ class BomController extends Controller
             'kode_bom' => 'required',
             'kode_produk' => 'required',
         ]);
+        $data=BomModel::where("kode_bom",$request->kode_bom)->get();
+        
+        // dd($data);
+        if($data->count() != 0){
+            return redirect()->back();
+        }
+        // dd($data);
         $tanggal = date("Y/m/d");
         BomModel::create([
             'kode_bom' => $request->kode_bom,

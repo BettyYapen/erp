@@ -37,10 +37,7 @@
                         @endforeach
                         @endif
                     </select>
-                    <td>
-                        <a href="" class="btn btn-danger delete-confirm" role="button">Hapus</a>
-                        <a href="" class="btn btn-info" role="button">Cetak</a>
-                    </td>
+                    <button class="btn btn-success" name="simpan" type="submit">next</button>
                                     </form>
                                 </div>
                             </div>

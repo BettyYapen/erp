@@ -20,6 +20,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4 offset-md-4">
+                                    
                                     <form action="{{ url('product/bom-input-item') }}" method="post">
                                         @csrf
                                         {{-- Dropdown Jenis --}}
@@ -31,6 +32,7 @@
                                             <label for="kode_bom">Kode BOM</label>
                                             <div class="input-group margin-bottom-sm">
                                                 <span class="input-group-addon"></span>
+                                               
                                                 <input type="text" name="kode_bom" value={{$bom->kode_bom}} class="form-control @error('kode_bom') is-invalid 
                                                         @enderror" autofocus placeholder="Kode BOM">
                                                 @error('kode_bom')
