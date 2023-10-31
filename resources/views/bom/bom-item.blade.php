@@ -65,7 +65,7 @@
                                             <label for="quantity">Jumlah</label>
                                             <div class="input-group margin-bottom-sm">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" name="quantity" class="form-control @error('quantity') is-invalid @enderror" autofocus placeholder="Jumlah Stok">
+                                                <input type="text" name="quantity" step="0.01" class="form-control @error('quantity') is-invalid @enderror" autofocus placeholder="Jumlah Stok">
                                                 @error('quantity')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
