@@ -51,6 +51,7 @@ Route::get('/product/bom-input', [BomController::class,'materialInput']);
 route::get('/product/cetak', [BomController::class, 'cetak'])->name('bom');
 route::get('/bom/cetak', [BomController::class, 'cetak'])->name('bom');
 Route::post('/product/bom-input', [BomController::class,'upload']);
+Route::get('/bom/cetak/detail/{kode_bom}', [BomController::class,'cetak_item']);
 Route::get('/product/bom-input-item/{kode_bom}', [BomController::class,'materialInputItems']);
 Route::post('/product/bom-input-item', [BomController::class,'uploadList']);
 Route::get('/product/bom-delete-item/{kode_bom_list}', [BomController::class,'deleteList']);

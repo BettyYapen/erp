@@ -52,6 +52,18 @@ class BomController extends Controller
         $produk = Inventory::all();
         return view('bom.bom-item', ['bom' => $bom, 'materials' => $produk, 'list' => $bomList]);
     }
+    public function cetak_item($kode_bom)
+    {
+        $bom = BomModel::join('tb_manufacture', 'tb_bom.kode_produk', '=', 'tb_manufacture.kode_produk')
+            ->where('tb_bom.kode_bom', $kode_bom)
+            ->first(['tb_bom.*', 'tb_manufacture.nama_produk', 'tb_manufacture.harga_jual']);
+        $list = BomListModel::join('tb_inventory', 'tb_bom_list.kode_produk', '=', 'tb_inventory.id_bahan')
+            ->where('tb_bom_list.kode_bom', $kode_bom)
+            ->get(['tb_bom_list.*', 'tb_inventory.nama_bahan', 'tb_inventory.harga']);
+        $produk = Inventory::all();
+        $pdf = Pdf::loadView('bom.cetak_item',compact('list'));
+        return $pdf->download('invoice_item.pdf');
+    }
     public function upload(Request $request)
     {
         $this->validate($request, [

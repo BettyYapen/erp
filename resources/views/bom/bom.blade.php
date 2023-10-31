@@ -50,7 +50,7 @@
                                             <td>
                                                 <a href="{{ url('/product/bom-input-item/'.$item->kode_bom) }}" class="btn btn-warning" role="button">Edit</a>
                                                 <a href="/product/bom/delete/{{$item->kode_bom}}" class="btn btn-danger delete-confirm" role="button">Hapus</a>
-                                                <a href="" class="btn btn-info" role="button">Cetak</a>
+                                                <a href="/bom/cetak/detail/{{$item->kode_bom}}" class="btn btn-info" role="button">Cetak</a>
                                             </td>
                                         </tr>
                                         @endforeach
